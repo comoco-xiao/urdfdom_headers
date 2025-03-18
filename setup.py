@@ -7,7 +7,7 @@ from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
 
 PROJECT_DIR = Path(__file__).parent
-VERSION = "1.0.2"
+VERSION = "1.0.5"
 
 class CMakeBuildExt(build_ext):
     """集成 CMake 编译流程"""
