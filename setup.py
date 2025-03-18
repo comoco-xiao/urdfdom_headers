@@ -7,7 +7,7 @@ from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
 
 PROJECT_DIR = Path(__file__).parent
-VERSION = "1.0.5"
+VERSION = "1.0.2"
 
 class CMakeBuildExt(build_ext):
     """集成 CMake 编译流程"""
@@ -95,7 +95,6 @@ setup(
     license="BSD-2-Clause",
     packages=[],
     python_requires=">=3.9",
-    install_requires=["numpy"],
     ext_modules=[Extension("urdfdom_headers_dummy", [])],  # 触发扩展构建
     cmdclass={"build_ext": CMakeBuildExt},
     zip_safe=False,
