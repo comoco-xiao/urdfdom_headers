@@ -1,0 +1,23 @@
+set(CMAKE_SYSTEM_NAME Android)
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+if(NOT ANDROID_ABI)
+    set(ANDROID_ABI arm64-v8a)
+endif()
+set(ANDROID_PLATFORM android-24)
+
+if(NOT CMAKE_ANDROID_NDK)
+    if(DEFINED ENV{NDK_HOME})
+        set(CMAKE_ANDROID_NDK $ENV{NDK_HOME} CACHE INTERNAL "Set NDK root path")
+    else()
+        message(FATAL_ERROR "NDK_HOME environment variable is not set")
+    endif()
+endif()
+set(CMAKE_ANDROID_ARCH_ABI ${ANDROID_ABI})
+set(CMAKE_ANDROID_API 24)
+set(CMAKE_ANDROID_STL_TYPE c++_shared)
+set(CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION clang)
+
+set(CMAKE_Fortran_COMPILER "" CACHE INTERNAL "Set Fortran compiler")
