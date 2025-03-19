@@ -3,7 +3,7 @@ import subprocess
 import sys
 import shutil
 from pathlib import Path
-from setuptools import setup, Extension
+from setuptools import setup, Extension, find_packages
 from setuptools.command.build_ext import build_ext
 
 PROJECT_DIR = Path(__file__).parent
@@ -93,7 +93,7 @@ setup(
     description="Efficient Rigid Body Dynamics Library",
     author="Xiao",
     license="BSD-2-Clause",
-    packages=[],
+    packages=find_packages(),
     python_requires=">=3.9",
     ext_modules=[Extension("", [])],  # 触发扩展构建
     cmdclass={"build_ext": CMakeBuildExt},
