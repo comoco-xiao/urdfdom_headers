@@ -43,14 +43,14 @@ class CMakeBuildExt(build_ext):
             sys.exit(1)
     def copy_data(self, install_dir):
         # include
-        include_path = os.path.join(self.build_lib, "cmeel.prefix", "include")
+        include_path = os.path.join(self.build_lib, "urdfdom_headers", "include")
         source_include_path = os.path.join(install_dir, "include")
         if os.path.exists(include_path):
             shutil.rmtree(include_path)
         shutil.copytree(source_include_path, include_path)
         
         # lib
-        lib_path = os.path.join(self.build_lib, "cmeel.prefix", "lib")
+        lib_path = os.path.join(self.build_lib, "urdfdom_headers", "lib")
         source_lib_path = os.path.join(install_dir, "lib")
         if os.path.exists(lib_path):
             shutil.rmtree(lib_path)
